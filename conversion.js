@@ -38,15 +38,12 @@ let divisaExtranjera = {
 let mjepesoADivExtranj 
 
 let mjeDivExtranjAPeso
-let montoPesoADivExtranjera
+
 let resultadoDivExtranjera
-let divisa
-let calcularDesdePeso = (divisa, montoPesoADivExtranjera) => (montoPesoADivExtranjera / divisa)
 
+let calcularDesdePeso = ( divisaExtranjera, montoPesoADivExtranjera) => (montoPesoADivExtranjera / divisaExtranjera)
 
-let montoDivExtranjeraAPeso
-
-let calcularHaciaPeso = (divisa, montoDivExtranjeraAPeso) => (montoDivExtranjeraAPeso * divisa)
+let calcularHaciaPeso = ( divisaExtranjera, montoDivExtranjeraAPeso) => (montoDivExtranjeraAPeso * divisaExtranjera)
 
 let resultadoPeso
 
@@ -159,7 +156,7 @@ while (mjeBienvenida != "FIN") {
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
                     resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.dolarBlue, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
-                    console.log("El monto equivalente es " + resultadoDivExtranjera + " USD");
+                    alert("El monto equivalente es " + resultadoDivExtranjera + " USD");
                     break
                 case 2:
                     //PESO A DOLAR OFICIAL
@@ -167,7 +164,7 @@ while (mjeBienvenida != "FIN") {
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
                     resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.dolarOficial, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
-                    console.log("El monto equivalente es " + resultadoDivExtranjera + " USD");
+                    alert("El monto equivalente es " + resultadoDivExtranjera + " USD");
                     break
                 case 3:
                     //PESO A REAL
@@ -175,7 +172,7 @@ while (mjeBienvenida != "FIN") {
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
                     resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.real, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
-                    console.log("El monto equivalente es " + resultadoDivExtranjera + " BRL");
+                    alert("El monto equivalente es " + resultadoDivExtranjera + " BRL");
                     break
                 case 4:
                     //PESO A EURO BLUE
@@ -183,7 +180,7 @@ while (mjeBienvenida != "FIN") {
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
                     resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.euroBlue, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
-                    console.log("El monto equivalente es " + resultadoDivExtranjera + " EUR");
+                    alert("El monto equivalente es " + resultadoDivExtranjera + " EUR");
                     break
                 case 5:
                     //PESO A EURO OFICIAL
@@ -191,7 +188,7 @@ while (mjeBienvenida != "FIN") {
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
                     resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.euroOficial, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
-                    console.log("El monto equivalente es " + resultadoDivExtranjera + " EUR");
+                    alert("El monto equivalente es " + resultadoDivExtranjera + " EUR");
                     break
             }
             break
@@ -208,7 +205,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.dolarBlue, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    console.log("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es ", resultadoPeso, " ARS");
                     break
                 case 2:
                     //DOLAR OFICIAL A PESO
@@ -216,7 +213,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.dolarOficial, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    console.log("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es ", resultadoPeso, " ARS");
                     break
                 case 3:
                     //REAL A PESO
@@ -224,7 +221,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.real, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    console.log("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es ", resultadoPeso, " ARS");
                     break
                 case 4:
                     //EURO BLUE A PESO
@@ -232,7 +229,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.euroBlue, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    console.log("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es ", resultadoPeso, " ARS");
                     break
                 case 5:
                     //EURO OFICIAL A PESO
@@ -240,7 +237,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.euroOficial, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    console.log("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es ", resultadoPeso, " ARS");
                     break
             }
             break
