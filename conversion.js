@@ -1,27 +1,56 @@
+//declaracion de la clase del menu 2
+class Usuario{
+
+    constructor( nombre , apellido , DNI, diasPF, montoPF, interesPF, totalCobroPF){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.DNI = DNI;
+        this.diasPF = diasPF;
+        this.montoPF = montoPF;
+        this.interesPF = interesPF;
+        this.totalCobroPF = totalCobroPF;
+    }
+    get_datos(){
+        alert(`<-- Datos ingresados -->
+                Nombre: ${this.nombre}
+                Apellido: ${this.apellido}
+                DNI: ${this.DNI}
+                Días de plazo fijo a simular: ${this.diasPF}
+                Monto de plazo fijo a simular: ${this.montoPF}
+                Monto del interés generado sería: ${this.interesPF}
+                Total a cobrar sería: ${this.totalCobroPF}`);
+    }
+}
+
+//variable del input gral
 let mjeBienvenida = prompt("Bienvenido al sitio de conversión de divisas QUEPAIS. Por favor ingrese el número correspondiente a una opción, o FIN: \n1 Ver la guía de conversión de dólares blue a pesos argentinos. (por consola) \n2 Ir al simulador de plazo fijo en pesos.\n3 Calcular la conversión de peso argentino a divisa extranjera. \n4 Calcular la conversión de divisa extranjera a peso argentino.",0);
 mjeBienvenida = parseInt(mjeBienvenida);
+
+//objeto y funciones globales del menu 3 y 4
+let divisaExtranjera = {
+    dolarBlue: 730,
+    dolarOficial: 367,
+    real: 100,
+    euroBlue: 788,
+    euroOficial: 397.5
+}
 
 let mjepesoADivExtranj 
 
 let mjeDivExtranjAPeso
-
-function calcularDesdePeso(divisaExtranjera, montoPesoADivExtranjera) {
-    let conversionPesoADivExtranjera = montoPesoADivExtranjera / divisaExtranjera
-    return conversionPesoADivExtranjera.toFixed(2)
-}
-
-let resultadoDivExtranjera
 let montoPesoADivExtranjera
+let resultadoDivExtranjera
+let divisa
+let calcularDesdePeso = (divisa, montoPesoADivExtranjera) => (montoPesoADivExtranjera / divisa)
+
+
 let montoDivExtranjeraAPeso
 
-function calcularHaciaPeso(divisaExtranjera, montoDivExtranjeraAPeso) {
-    let conversionDivExtranjeraAPeso = montoDivExtranjeraAPeso * divisaExtranjera
-    return conversionDivExtranjeraAPeso.toFixed(2)
-}
+let calcularHaciaPeso = (divisa, montoDivExtranjeraAPeso) => (montoDivExtranjeraAPeso * divisa)
 
 let resultadoPeso
 
-//funciones globales para simulador de Plazo Fijo
+//funciones globales para menu 2(simulador de Plazo Fijo)
 let interes = (montoPF, tasa) => (montoPF * tasa)
 let totalPF = (montoPF, interesPF) => (montoPF + interesPF)
 let interesPF
@@ -40,36 +69,13 @@ while (mjeBienvenida != "FIN") {
             let dolarGuia = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000];
 
             function dolarBlue (num) {
-                console.log(num + " dólares blue son " + num *730 + " pesos argentinos" );
+                console.log(num + " dólares blue son " + num * divisaExtranjera.dolarBlue + " pesos argentinos" );
             }
 
             dolarGuia.forEach(dolarBlue);
             break
         case 2:
             //SIMULADOR DE PLAZO FIJO
-            class Usuario{
-
-                constructor( nombre , apellido , DNI, diasPF, montoPF, interesPF, totalCobroPF){
-                    this.nombre = nombre;
-                    this.apellido = apellido;
-                    this.DNI = DNI;
-                    this.diasPF = diasPF;
-                    this.montoPF = montoPF;
-                    this.interesPF = interesPF;
-                    this.totalCobroPF = totalCobroPF;
-                }
-                get_datos(){
-                    alert(`<-- Datos ingresados -->
-                            Nombre: ${this.nombre}
-                            Apellido: ${this.apellido}
-                            DNI: ${this.DNI}
-                            Días de plazo fijo a simular: ${this.diasPF}
-                            Monto de plazo fijo a simular: ${this.montoPF}
-                            Monto del interés generado sería: ${this.interesPF}
-                            Total a cobrar sería: ${this.totalCobroPF}`);
-                }
-            }
-
             let arregloPF = [];
             let nombre = ""; 
             while ( nombre != "FIN" ){
@@ -84,7 +90,6 @@ while (mjeBienvenida != "FIN") {
                     diasPF = parseInt(diasPF);
                     montoPF = prompt("Ingrese el monto en pesos argentinos.", 0);
                     montoPF = parseInt(montoPF);
-                
                     switch(diasPF) {
                         case 30:
                             interesPF = interes(montoPF, 0.0983);
@@ -152,7 +157,7 @@ while (mjeBienvenida != "FIN") {
                     //PESO A DOLAR BLUE
                     montoPesoADivExtranjera = prompt("Ingrese el monto en pesos argentinos",0)
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
-                    resultadoDivExtranjera = calcularDesdePeso(730, montoPesoADivExtranjera);
+                    resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.dolarBlue, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
                     console.log("El monto equivalente es " + resultadoDivExtranjera + " USD");
                     break
@@ -160,7 +165,7 @@ while (mjeBienvenida != "FIN") {
                     //PESO A DOLAR OFICIAL
                     montoPesoADivExtranjera = prompt("Ingrese el monto en pesos argentinos",0)
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
-                    resultadoDivExtranjera = calcularDesdePeso(367, montoPesoADivExtranjera);
+                    resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.dolarOficial, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
                     console.log("El monto equivalente es " + resultadoDivExtranjera + " USD");
                     break
@@ -168,7 +173,7 @@ while (mjeBienvenida != "FIN") {
                     //PESO A REAL
                     montoPesoADivExtranjera = prompt("Ingrese el monto en pesos argentinos",0)
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
-                    resultadoDivExtranjera = calcularDesdePeso(100, montoPesoADivExtranjera);
+                    resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.real, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
                     console.log("El monto equivalente es " + resultadoDivExtranjera + " BRL");
                     break
@@ -176,7 +181,7 @@ while (mjeBienvenida != "FIN") {
                     //PESO A EURO BLUE
                     montoPesoADivExtranjera = prompt("Ingrese el monto en pesos argentinos",0)
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
-                    resultadoDivExtranjera = calcularDesdePeso(788, montoPesoADivExtranjera);
+                    resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.euroBlue, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
                     console.log("El monto equivalente es " + resultadoDivExtranjera + " EUR");
                     break
@@ -184,7 +189,7 @@ while (mjeBienvenida != "FIN") {
                     //PESO A EURO OFICIAL
                     montoPesoADivExtranjera = prompt("Ingrese el monto en pesos argentinos",0)
                     montoPesoADivExtranjera = parseInt(montoPesoADivExtranjera);
-                    resultadoDivExtranjera = calcularDesdePeso(397.5, montoPesoADivExtranjera);
+                    resultadoDivExtranjera = calcularDesdePeso(divisaExtranjera.euroOficial, montoPesoADivExtranjera);
                     resultadoDivExtranjera = parseInt(resultadoDivExtranjera);
                     console.log("El monto equivalente es " + resultadoDivExtranjera + " EUR");
                     break
@@ -201,7 +206,7 @@ while (mjeBienvenida != "FIN") {
                     //DOLAR BLUE A PESO
                     montoDivExtranjeraAPeso = prompt("Ingrese el monto en dólares",0)
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
-                    resultadoPeso = calcularHaciaPeso(730, montoDivExtranjeraAPeso);
+                    resultadoPeso = calcularHaciaPeso(divisaExtranjera.dolarBlue, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
                     console.log("El monto equivalente es ", resultadoPeso, " ARS");
                     break
@@ -209,7 +214,7 @@ while (mjeBienvenida != "FIN") {
                     //DOLAR OFICIAL A PESO
                     montoDivExtranjeraAPeso = prompt("Ingrese el monto en dólares",0)
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
-                    resultadoPeso = calcularHaciaPeso(367, montoDivExtranjeraAPeso);
+                    resultadoPeso = calcularHaciaPeso(divisaExtranjera.dolarOficial, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
                     console.log("El monto equivalente es ", resultadoPeso, " ARS");
                     break
@@ -217,7 +222,7 @@ while (mjeBienvenida != "FIN") {
                     //REAL A PESO
                     montoDivExtranjeraAPeso = prompt("Ingrese el monto en reales",0)
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
-                    resultadoPeso = calcularHaciaPeso(100, montoDivExtranjeraAPeso);
+                    resultadoPeso = calcularHaciaPeso(divisaExtranjera.real, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
                     console.log("El monto equivalente es ", resultadoPeso, " ARS");
                     break
@@ -225,7 +230,7 @@ while (mjeBienvenida != "FIN") {
                     //EURO BLUE A PESO
                     montoDivExtranjeraAPeso = prompt("Ingrese el monto en euros",0)
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
-                    resultadoPeso = calcularHaciaPeso(788, montoDivExtranjeraAPeso);
+                    resultadoPeso = calcularHaciaPeso(divisaExtranjera.euroBlue, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
                     console.log("El monto equivalente es ", resultadoPeso, " ARS");
                     break
@@ -233,7 +238,7 @@ while (mjeBienvenida != "FIN") {
                     //EURO OFICIAL A PESO
                     montoDivExtranjeraAPeso = prompt("Ingrese el monto en euros",0)
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
-                    resultadoPeso = calcularHaciaPeso(397.5, montoDivExtranjeraAPeso);
+                    resultadoPeso = calcularHaciaPeso(divisaExtranjera.euroOficial, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
                     console.log("El monto equivalente es ", resultadoPeso, " ARS");
                     break
