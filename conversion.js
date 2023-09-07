@@ -36,14 +36,14 @@ let divisaExtranjera = {
 }
 
 let mjepesoADivExtranj 
-
 let mjeDivExtranjAPeso
-
 let resultadoDivExtranjera
+let montoPesoADivExtranjera
+let montoDivExtranjeraAPeso
 
-let calcularDesdePeso = ( divisaExtranjera, montoPesoADivExtranjera) => (montoPesoADivExtranjera / divisaExtranjera)
+let calcularDesdePeso = ( divisa, montoPesoADivExtranjera) => (montoPesoADivExtranjera / divisa)
 
-let calcularHaciaPeso = ( divisaExtranjera, montoDivExtranjeraAPeso) => (montoDivExtranjeraAPeso * divisaExtranjera)
+let calcularHaciaPeso = ( divisaE, montoDivExtranjeraAPeso) => (montoDivExtranjeraAPeso * divisaE)
 
 let resultadoPeso
 
@@ -195,7 +195,6 @@ while (mjeBienvenida != "FIN") {
             
         case 4:
             //DIVISA EXTRANJERA A PESO
-        
             mjeDivExtranjAPeso = prompt("Por favor ingrese el número correspondiente a una opción, o FIN: \n1 Conversión de dolar blue a peso argentino.\n2 Conversión de dolar oficial a peso argentino.\n3 Conversión de real brasileño a peso argentino.\n4 Conversión de euro blue a peso argentino. \n5 Conversión de euro oficial a peso argentino.",0);
             mjeDivExtranjAPeso = parseInt(mjeDivExtranjAPeso); 
             switch (mjeDivExtranjAPeso) {
@@ -205,7 +204,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.dolarBlue, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    alert("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es "+ resultadoPeso + " ARS");
                     break
                 case 2:
                     //DOLAR OFICIAL A PESO
@@ -213,7 +212,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.dolarOficial, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    alert("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es " + resultadoPeso + " ARS");
                     break
                 case 3:
                     //REAL A PESO
@@ -221,7 +220,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.real, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    alert("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es " + resultadoPeso + " ARS");
                     break
                 case 4:
                     //EURO BLUE A PESO
@@ -229,7 +228,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.euroBlue, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    alert("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es " + resultadoPeso + " ARS");
                     break
                 case 5:
                     //EURO OFICIAL A PESO
@@ -237,7 +236,7 @@ while (mjeBienvenida != "FIN") {
                     montoDivExtranjeraAPeso = parseInt(montoDivExtranjeraAPeso);
                     resultadoPeso = calcularHaciaPeso(divisaExtranjera.euroOficial, montoDivExtranjeraAPeso);
                     resultadoPeso = parseInt(resultadoPeso);
-                    alert("El monto equivalente es ", resultadoPeso, " ARS");
+                    alert("El monto equivalente es " + resultadoPeso + " ARS");
                     break
             }
             break
