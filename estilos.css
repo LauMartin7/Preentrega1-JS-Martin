@@ -25,47 +25,164 @@ h1 {
     font-size: 40px;
     color: #f6f1f1;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 h2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 30px;
-    color:rgba(63, 27, 99, 0.868);
+    font-size: 33px;
+    color:rgba(16, 57, 89, 0.868);
     margin-bottom: 40px;
-    margin-left: 10px;
+    margin-left: 15px;
     letter-spacing: 3px;
+    text-shadow: 1px 1px 2px rgba(118, 123, 123, 0.926);
+    text-align: center;
+}
+
+h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    color:rgba(36, 30, 92, 0.829);
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(172, 173, 173, 0.926);
+}
+
+h4 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color:rgba(5, 3, 18, 0.829);
+    text-align: center;
+    background-color: rgba(245, 245, 220, 0.521);
+    width: 100%;
 }
 
 main {
-    padding-top: 100px;
-    height: 800px;
+    padding-top: 50px;
+    height: 1300px;
     background-image: url(./img/divisa.jpg);
-    background-repeat: no-repeat;
-    background-position: right;
+    background-repeat:repeat;
+    background-position:initial;
     background-size:initial;
 }
 
 table{
-    width: 90%;
-    margin-left: 10px;
+    width: 98%;
+    margin-left: 15px;
 }
 
 th, td {
-    width: 18%;
+    width: 12.2%;
     height: 50px;
     text-align: center;
-    color: rgb(40, 38, 38);
-    background-color: #206367ad;
+    background-color: #206367cb;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
+    
 }
+
 th {
+    color: rgb(27, 26, 26);
     text-shadow: 1px 1px 2px rgba(165, 172, 172, 0.926);
+    font-size: 20px;
+}
+
+td {
+    color: rgb(27, 26, 26);
+    font-size: 18px;
 }
 
 #plazoFijo {
-    font-weight: bold;
-    color: rgb(21, 15, 52);
+    font-weight: bolder;
+    color: rgb(27, 26, 26);
     text-shadow: 1px 1px 2px rgba(165, 172, 172, 0.926);
     letter-spacing: 2px;
+    font-size: 20px;
+}
+
+#divConvADolar, #divConvAPeso {
+    background-color: #206367cb;
+    height: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items:first baseline;
+    justify-content: space-around;
+    color: rgb(27, 26, 26);
+    font-size: 20px;
+    width: 49%;
+}
+
+#divConvADolar div, #divConvAPeso div {
+    margin-left: 5px;
+    display: flex;
+    justify-items: center;
+    
+}
+
+#divConvADolar p, #divConvAPeso p {
+    width: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tituloConversion {
+    margin-top: 0;
+}
+
+#divConvADolar div select option, #divConvAPeso div select option{
+    color: rgb(27, 26, 26);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#seccionConversor {
+    width: 100%;
+    margin-top: 50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#seccionPF {
+    width: 100%;
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#divBuscarUsuario, #divPF {
+    background-color: rgba(5, 68, 156, 0.927);
+    width: 98%;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(27, 26, 26);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    height: 230px;
+}
+#divPlazo{
+    width: 150px;
+}
+#divPF div p{
+    margin-bottom: 20px;
+}
+#btn30, #btn60, #btn90, #btn365{
+    margin-bottom: 10px;
+}
+#divResultadoPF, #divResultadoBuscadorPF{
+    width: 400px;
+}
+
+#divPF div button, #divBuscarUsuario div button {
+    padding: 8px 12px;
+    background-color: rgba(220, 240, 245, 0.911);
+    border-radius: 5px;
+    font-weight: bolder;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+#divPF div button:hover, #divBuscarUsuario div button:hover {
+    box-shadow: 6px 8px 9px rgb(44, 73, 128);
 }
