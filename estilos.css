@@ -32,7 +32,7 @@ h2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 33px;
     color:rgba(16, 57, 89, 0.868);
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     margin-left: 15px;
     letter-spacing: 3px;
     text-shadow: 1px 1px 2px rgba(118, 123, 123, 0.926);
@@ -74,12 +74,11 @@ table{
 }
 
 th, td {
-    width: 12.2%;
+    width: 6%;
     height: 50px;
     text-align: center;
     background-color: #206367cb;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
 th {
@@ -93,6 +92,12 @@ td {
     font-size: 18px;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
 #plazoFijo {
     font-weight: bolder;
     color: rgb(27, 26, 26);
@@ -101,17 +106,19 @@ td {
     font-size: 20px;
 }
 
+
 #divConvADolar, #divConvAPeso {
     background-color: #206367cb;
     height: 200px;
     display: flex;
     flex-flow: row wrap;
     align-items:first baseline;
-    justify-content: space-around;
+    justify-content:space-around;
     color: rgb(27, 26, 26);
     font-size: 20px;
-    width: 49%;
+    width: 48%;
 }
+
 
 #divConvADolar div, #divConvAPeso div {
     margin-left: 5px;
@@ -128,6 +135,17 @@ td {
     margin-top: 0;
 }
 
+main section p, main section p a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(27, 26, 26);
+    text-align: right;
+    margin-right: 10px;
+}
+
+main section p a {
+    text-decoration: none;
+}
+
 #divConvADolar div select option, #divConvAPeso div select option{
     color: rgb(27, 26, 26);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -138,7 +156,7 @@ td {
     margin-top: 50px;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 #seccionPF {

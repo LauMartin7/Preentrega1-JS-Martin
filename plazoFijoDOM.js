@@ -42,32 +42,29 @@ function calcularPF(){
             parrafoPF.innerText= `<--NO ES POSIBLE REALIZAR UNA SIMULACION DE PLAZO FIJO-->
                 El DNI ingresado ya fue utilizado en una 
                 simulación previa.`
-            return;
+        return;   
     }
     
-    let montoPF = document.getElementById("montoPF").value;
+    let montoPF = document.getElementById("montoPF").value > 0 ? document.getElementById("montoPF").value : 0 ;
     let diasPF = document.querySelector('input[name="plazo"]:checked').value;
 
     let interesPF =0;
     let totalCobroPF = 0;
-
+    
     if(diasPF ==30){
         interesPF = parseInt(montoPF * 0.0983);
-        totalCobroPF = parseInt((Number(montoPF) + Number(interesPF)));
     }
     else if(diasPF ==60){
         interesPF = parseInt(montoPF * 0.1966);
-        totalCobroPF = parseInt((Number(montoPF) + Number(interesPF)));
     }
     else if(diasPF ==90){
         interesPF = parseInt(montoPF * 0.2949);
-        totalCobroPF = parseInt((Number(montoPF) + Number(interesPF)));
     }
     else if(diasPF ==365){
         interesPF = parseInt(montoPF * 1.18);
-        totalCobroPF = parseInt((Number(montoPF) + Number(interesPF)));
     }
     
+    totalCobroPF = parseInt((Number(montoPF) + Number(interesPF)))
     let usuario = new Usuario(nombre, DNI, montoPF, diasPF, interesPF, totalCobroPF);
     arregloPF.push(usuario);
 
@@ -98,7 +95,7 @@ function buscadorPF (){
     let DNIIngresado = document.getElementById("buscadorDNIUsuario").value;
     let parrafoBuscadorPF = document.getElementById("parrafoBuscadorPF");
 
-    let usuarioEncontrado = arr.find(usuario => usuario.DNI === DNIIngresado);
+    let usuarioEncontrado = arr.find(usuario => usuario.DNI === DNIIngresado); 
 
     if (usuarioEncontrado) {
         parrafoBuscadorPF.innerText= `<--DATOS ENCONTRADOS-->
@@ -113,6 +110,8 @@ function buscadorPF (){
             parrafoBuscadorPF.innerText= `No se encuentra registro de un plazo fijo simulado
                                 con el DNI ${DNIIngresado}`;
     }
+    
+
 }
 
 //evento boton Buscar
