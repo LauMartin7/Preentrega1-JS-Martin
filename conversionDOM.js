@@ -1,5 +1,4 @@
-//conversion a dolar o a peso arg
-
+//FETCH con peticion a la API que da el valor del dolar y la fecha
 
 fetch(`https://dolarapi.com/v1/dolares`,
 {
@@ -20,7 +19,6 @@ fetch(`https://dolarapi.com/v1/dolares`,
     
     //TABLA de cotizaciones
 
-    
     let valoresDolarTabla = document.getElementById("valoresDolarTabla");
 
     let arrayValoresDolar = [dolarOficial?.compra, dolarOficial?.venta, dolarBlue?.compra, dolarBlue?.venta, dolarBolsa?.compra, dolarBolsa?.venta, dolarContadoConLiqui?.compra, dolarContadoConLiqui?.venta, dolarTurista?.venta, dolarMayorista?.compra, dolarMayorista?.venta];
@@ -61,11 +59,10 @@ function calculoConvADolar(e){
     let teclaConvADolar = document.getElementById("importeConvADolar");
     let parrafoConvADolar = document.getElementById("parrafoConvADolar");
     
-
     let resultadoConvADolar = parseFloat(teclaConvADolar.value) > 0 ? parseFloat(teclaConvADolar.value) / parseFloat(e.target.value) : false; 
 
     resultadoConvADolar ? parrafoConvADolar.innerText= `${teclaConvADolar.value} ARS = ${resultadoConvADolar.toFixed(2)} USD` : parrafoConvADolar.innerText= `${teclaConvADolar.value} ARS no es una opción válida`
-    
+
 }
 
 function calculoConvAPeso (e) {

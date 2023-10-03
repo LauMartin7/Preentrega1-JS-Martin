@@ -28,12 +28,13 @@ h1 {
     text-align: center;
 }
 
+/*Seccion con tabla de conversion*/
 h2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 33px;
     color:#f6f1f1;
     margin-bottom: 60px;
-    margin-left: 15px;
+    padding-left: 15px;
     letter-spacing: 3px;
     background-color: #84A7A1;
     text-shadow: 1px 1px 2px rgb(91, 93, 93);
@@ -63,7 +64,8 @@ h4 {
 
 main {
     padding-top: 50px;
-    height: 1300px;
+    padding-bottom: 50px;
+    height: 1450px;
     background-image: url(./img/divisa.jpg);
     background-repeat:repeat;
     background-position:initial;
@@ -95,12 +97,6 @@ td {
     letter-spacing: 1px;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-}
-
 #plazoFijo {
     font-weight: bolder;
     color: #0E2954;
@@ -109,6 +105,24 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 20px;
 }
 
+#parrafoDolarApi {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(27, 26, 26);
+    text-align: right;
+    margin-right: 10px;
+}
+
+#parrafoDolarApi a {
+    text-decoration: none;
+    color: rgb(27, 26, 26);
+}
+/*Seccion de conversion de divisas*/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
 
 #divConvADolar, #divConvAPeso {
     background-color: #1F6E8C;
@@ -121,7 +135,6 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 20px;
     width: 48%;
 }
-
 
 #divConvADolar div, #divConvAPeso div {
     display: flex;
@@ -144,18 +157,6 @@ input, select {
     margin-top: 0;
 }
 
-#parrafoDolarApi {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(27, 26, 26);
-    text-align: right;
-    margin-right: 10px;
-}
-
-#parrafoDolarApi a {
-    text-decoration: none;
-    color: rgb(27, 26, 26);
-}
-
 #divConvADolar div select option, #divConvAPeso div select option{
     color: rgb(27, 26, 26);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -168,6 +169,8 @@ input, select {
     align-items: center;
     justify-content: space-evenly;
 }
+
+/*Seccion de Plazo fijo*/
 
 #seccionPF {
     width: 100%;
