@@ -44,7 +44,7 @@
                     <td colspan="11" id="plazoFijo">Plazo fijo en Pesos - Tasa Nominal Anual 118%</td>
                 </tr>
             </table>
-            <p>Datos obtenidos de <a href="https://dolarapi.com">https://dolarapi.com/</a></p>
+            <p id="parrafoDolarApi">Datos obtenidos de <a href="https://dolarapi.com">https://dolarapi.com/</a></p>
         </section>
         <section id="seccionConversor">
             <div id="divConvADolar">
@@ -62,11 +62,11 @@
             <div id="divConvAPeso">
                 <h4 class="tituloConversion">CONVERSION A PESOS ARGENTINOS</h4>
                 <div>
-                    <label for="">Importe en dólares:</label>
+                    <label for="importeConvAPeso">Importe en dólares:</label>
                     <input type="number" id="importeConvAPeso">
                 </div>
                 <div>
-                    <label for="">Tipo de dólar:</label>
+                    <label for="selectConvAPeso">Tipo de dólar:</label>
                     <select id="selectConvAPeso"></select>
                 </div>
                 <p id="parrafoConvAPeso"></p>
@@ -75,15 +75,15 @@
         <h4>Simulador de Plazo fijo en pesos</h4>
         <section id="seccionPF">
             <div id="divPF">
-                <div>
-                    <label for="">Nombre:</label>
+                <div class="alinearLabel">
+                    <label for="nombreUsuario">Nombre:</label>
                     <input type="text" id="nombreUsuario">
                 </div>
-                <div>
-                    <label for="">DNI:</label>
+                <div class="alinearLabel">
+                    <label for="DNIUsuario">DNI:</label>
                     <input type="number" id="DNIUsuario" required>
                 </div> 
-                <div>
+                <div class="alinearLabel">
                     <label for="">Monto:</label>
                     <input type="number" id="montoPF" required>
                 </div>
@@ -107,8 +107,8 @@
             </div>
             <h4>Buscador de plazo fijo simulados</h4>
             <div id="divBuscarUsuario">
-                <div>
-                    <label for="">Ingrese el DNI del usuario:</label>
+                <div class="alinearLabel">
+                    <label for="buscadorDNIUsuario">Ingrese el DNI del usuario:</label>
                     <input type="number" id="buscadorDNIUsuario">
                 </div>
                 <div>
@@ -119,9 +119,7 @@
                 </div>
             </div>
         </section>
-
     </main>
-    
     <script src="conversionDOM.js"></script>
     <script src="plazoFijoDOM.js"></script>
 </body>

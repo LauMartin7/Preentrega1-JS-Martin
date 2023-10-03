@@ -53,8 +53,6 @@ fetch(`https://dolarapi.com/v1/dolares`,
     }
 
 })
-    
-
 
 //declaracion de evenhandlers
 
