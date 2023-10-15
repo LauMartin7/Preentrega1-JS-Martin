@@ -52,16 +52,16 @@ function calcularPF(){
     let totalCobroPF = 0;
     
     if(diasPF ==30){
-        interesPF = parseInt(montoPF * 0.0983);
+        interesPF = parseInt(montoPF * 0.1093);
     }
     else if(diasPF ==60){
-        interesPF = parseInt(montoPF * 0.1966);
+        interesPF = parseInt(montoPF * 0.2186);
     }
     else if(diasPF ==90){
-        interesPF = parseInt(montoPF * 0.2949);
+        interesPF = parseInt(montoPF * 0.3279);
     }
     else if(diasPF ==365){
-        interesPF = parseInt(montoPF * 1.18);
+        interesPF = parseInt(montoPF * 1.33);
     }
     
     totalCobroPF = parseInt((Number(montoPF) + Number(interesPF)))
